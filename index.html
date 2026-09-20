@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="English networking flashcards and short vocabulary practice for LANs, OSI layers, switching, ARP, routers, TCP, UDP, and PoE.">
+  <title>Networking Vocabulary · Phase 0</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317365d'/%3E%3Cpath d='M8 9h16v4H8zm0 6h16v4H8zm0 6h16v3H8z' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="terms.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#study-area">Skip to study area</a>
+  <main class="app-shell">
+    <header class="hero">
+      <div><p class="eyebrow">PHASE 0 · NETWORKING FOUNDATIONS</p><h1>Networking vocabulary</h1><p>Section 2 · Basics of Layers 2, 3, and 4</p></div>
+      <div class="hero-count"><strong>80</strong><span>terms · 8 topics</span></div>
+    </header>
+    <nav class="mode-tabs" role="tablist" aria-label="Study mode">
+      <button id="tab-flashcards" role="tab" aria-selected="true" aria-controls="panel-flashcards" tabindex="0" data-mode="flashcards"><span aria-hidden="true">▤</span> Flashcards</button>
+      <button id="tab-practice" role="tab" aria-selected="false" aria-controls="panel-practice" tabindex="-1" data-mode="practice"><span aria-hidden="true">✓</span> Practice</button>
+      <button id="tab-glossary" role="tab" aria-selected="false" aria-controls="panel-glossary" tabindex="-1" data-mode="glossary"><span aria-hidden="true">Aa</span> Vocabulary</button>
+    </nav>
+    <section class="toolbar" aria-label="Study options">
+      <label class="topic-field">Topic<select id="topic"><option value="all">All topics</option></select></label>
+      <label id="scope-field">Cards<select id="scope"><option value="all">All cards</option><option value="review">Review again</option><option value="new">Not rated yet</option><option value="known">I know these</option></select></label>
+      <label id="direction-field">Direction<select id="direction"><option value="term">Term → meaning</option><option value="meaning">Meaning → term</option></select></label>
+      <div id="topic-total" class="topic-total" hidden></div>
+    </section>
+    <div id="study-area" tabindex="-1">
+      <section id="panel-flashcards" class="panel" role="tabpanel" aria-labelledby="tab-flashcards">
+        <div class="section-heading"><div><p class="eyebrow" id="deck-kicker">YOUR STUDY DECK</p><h2 id="deck-title">All topics</h2></div><span class="count-pill" id="deck-count">80 cards</span></div>
+        <div class="status-row"><span id="card-topic"></span><span id="card-position"></span></div>
+        <div class="progress-track" aria-hidden="true"><div id="deck-progress"></div></div>
+        <div id="empty-deck" class="empty-state" hidden><h3>No cards in this view</h3><p id="empty-copy"></p><button class="primary" id="show-all">Show all cards</button></div>
+        <div id="card-area">
+          <button type="button" id="flashcard" class="flashcard" aria-label="Reveal meaning">
+            <span class="card-label" id="card-label">TERM</span>
+            <span id="card-term" class="main-term"></span>
+            <span id="card-expansion" class="expansion" hidden></span>
+            <span id="card-definition" class="definition" hidden></span>
+            <span id="card-note" class="card-note" hidden></span>
+            <span id="flip-hint" class="flip-hint">Think of the meaning, then tap to reveal</span>
+          </button>
+          <div class="nav-row"><button id="previous" class="secondary">← Previous</button><button id="shuffle" class="text-button">Shuffle</button><button id="next" class="secondary">Next →</button></div>
+          <div class="self-check"><button id="rate-review" class="review-button" disabled>↺ Review again</button><button id="rate-known" class="primary" disabled>✓ I know this</button></div>
+          <p class="small centered" id="rating-hint">Reveal the answer before rating this card.</p>
+        </div>
+        <div class="stats"><span><strong id="known-count">0</strong> I know</span><span><strong id="review-count">0</strong> to review</span><span><strong id="new-count">80</strong> not rated</span><button id="reset-topic" class="text-button">Reset topic ratings</button></div>
+      </section>
+      <section id="panel-practice" class="panel" role="tabpanel" aria-labelledby="tab-practice" hidden>
+        <div class="section-heading"><div><p class="eyebrow" id="practice-topic">ALL TOPICS</p><h2>Short vocabulary practice</h2></div></div>
+        <div id="practice-home">
+          <p class="muted">Choose a quick activity. Each round draws from the selected topic.</p>
+          <div class="activity-grid">
+            <button class="activity" data-activity="match"><span class="activity-number">01</span><strong>Match pairs</strong><span>Connect 5 terms with their meanings.</span><span class="activity-link">Start matching →</span></button>
+            <button class="activity" data-activity="choice"><span class="activity-number">02</span><strong>Choose the meaning</strong><span>Pick the definition that fits each term.</span><span class="activity-link">Start 10 questions →</span></button>
+            <button class="activity" data-activity="recall"><span class="activity-number">03</span><strong>Recall the term</strong><span>Read a meaning and type its term or acronym.</span><span class="activity-link">Start 10 questions →</span></button>
+          </div>
+          <p class="small">Small topics use fewer questions. These are memory drills; they do not establish roadmap mastery.</p>
+        </div>
+        <div id="practice-round" hidden>
+          <div class="round-top"><button id="leave-round" class="text-button">← Choose an activity</button><span id="round-position" class="count-pill"></span></div>
+          <div id="question-area" class="question-card" hidden>
+            <p class="eyebrow" id="question-kind"></p><h3 id="question-prompt" tabindex="-1"></h3>
+            <div id="choice-options" class="choice-options"></div>
+            <form id="recall-form" hidden><label for="recall-answer">Term or acronym</label><div class="answer-row"><input id="recall-answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="answer-hint"><button class="primary" id="check-answer" type="submit">Check answer</button></div><p class="small" id="answer-hint">Capitalization and punctuation do not matter. No long explanation needed.</p></form>
+            <div id="answer-feedback" class="feedback" role="status" aria-live="polite"></div>
+            <div class="question-actions"><button id="show-answer" class="text-button">Show answer</button><button id="next-question" class="primary" hidden>Next question →</button></div>
+          </div>
+          <div id="matching-area" hidden><p class="muted">Select a term, then its meaning. You can also select the meaning first.</p><div class="match-grid"><div><h3 class="column-label">Terms</h3><div id="match-terms" class="match-column"></div></div><div><h3 class="column-label">Meanings</h3><div id="match-definitions" class="match-column"></div></div></div><p id="match-feedback" class="feedback" role="status" aria-live="polite"></p></div>
+        </div>
+        <div id="practice-result" class="result" hidden><p class="eyebrow">ROUND COMPLETE</p><h3 id="result-title" tabindex="-1"></h3><p id="result-detail"></p><ul id="result-review"></ul><div class="result-actions"><button id="retry-round" class="primary">New round</button><button id="back-to-activities" class="secondary">Choose an activity</button></div></div>
+      </section>
+      <section id="panel-glossary" class="panel" role="tabpanel" aria-labelledby="tab-glossary" hidden>
+        <div class="section-heading"><div><p class="eyebrow">QUICK REFERENCE</p><h2>Vocabulary list</h2></div><span id="glossary-count" class="count-pill"></span></div>
+        <label class="search-label" for="search">Find a term, acronym, or meaning<input id="search" type="search" placeholder="Try MAC, gateway, or transport…" autocomplete="off"></label>
+        <div id="glossary-list" class="glossary-list"></div>
+        <p id="glossary-empty" class="empty-state" hidden>No matching terms. Try another search or choose All topics.</p>
+      </section>
+    </div>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <p id="storage-note" class="storage-note">Your card ratings stay in this browser. They do not update the master roadmap.</p>
+    <details class="help"><summary>How to study &amp; what this deck covers</summary><div class="help-content"><p>Try to recall the answer before flipping. Use <strong>Review again</strong> or <strong>I know this</strong>, then filter your cards to revisit the terms you need. Switch to <strong>Practice</strong> for matching, multiple choice, and short recall.</p><p>On a flashcard, press <strong>Enter</strong> or <strong>Space</strong> to flip. Use <strong>←</strong> and <strong>→</strong> to move through the deck when focus is outside a form field. All matching activities work with clicks or a keyboard; dragging is not required.</p><p>This deck covers the eight supplied study guides for Section 2 of <em>Introduction to Computer Networking – Beginner Crash Course</em>, with introductory LAN and OSI context. Later lessons on subnet calculations, VLAN configuration, WAN/VPN, troubleshooting, security, and Wi-Fi configuration are outside this deck.</p><p>Definitions are newly written. Course PDFs and slides are not included. Important corrections include HTTP at the application layer, changeable MAC addresses, and the difference between unknown-unicast flooding and broadcast. <a href="sources.html">Read the source and correction notes.</a></p></div></details>
+    <footer><span>Networking Vocabulary · Phase 0</span><a href="setup.html">Setup &amp; GitHub Pages guide</a></footer>
+    <noscript><div class="no-script">Please enable JavaScript to use the flashcards and activities. No account or API key is required.</div></noscript>
+  </main>
+</body>
+</html>
